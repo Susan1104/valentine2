@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine Week Special</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Bradley Hand ITC;
+    text-align:center;
+    color:white;
+    background:linear-gradient(to right,#ff758c,#ff7eb3);
+    overflow:hidden;
+}
+
+h1{margin-top:20px;}
+
+.slide{
+    display:none;
+    padding-top:100px;
+    font-size:26px;
+    width:80%;
+    margin:auto;
+    animation:fade 1.5s;
+}
+
+.active{display:block;}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* floating hearts */
+.heart{
+    position:fixed;
+    bottom:-40px;
+    font-size:22px;
+    animation:float 6s linear infinite;
+}
+@keyframes float{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100vh);}
+}
+
+/* image styling */
+.photo{
+    margin-top:20px;
+    width:280px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.4);
+    animation:zoom 8s infinite alternate;
+}
+@keyframes zoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+}
+
+/* glowing text */
+.glow{
+    font-size:40px;
+    font-weight:bold;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #fff,0 0 20px #ff4d6d;}
+    to{text-shadow:0 0 20px #fff,0 0 40px #ff1a4d;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Valentine Week ❤️</h1>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="C:\Users\ravin\Downloads\music1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slide active">🌹 Rose Day – You are the most beautiful part of my life. The day you gave me that rose, I felt so many emotions in my heart… 🌹💞 I couldn’t believe that now I have someone who truly loves me.That rose wasn’t just a flower, it was the beginning of us.</div>
+
+<div class="slide">💍 Propose Day – If I had to choose again, I would still choose you. 💖 You are my peace, my happiness, my forever.I want to be with you forever.If I had to choose again, I would still choose you. 💖 You are not just my love, you are my peace, my happiness, my forever. I promise to stand with you in every situation and never let you feel alone.</div>
+
+<div class="slide">🍫 Chocolate Day – Like chocolate makes everything sweeter, you make my life sweeter every single day🍫💕. Your smile melts my heart and makes everything feel okay.😊</div>
+
+<div class="slide">🧸 Teddy Day – You are my comfort, my smile, and the one who makes my heart feel safe.Sending you warm hugs.You are my teddy forever 🧸💖
+My comfort, my smile, and the one who makes my heart feel safe. Whenever I think of you, I feel warmth, happiness, and a love that I never want to lose.
+</div>
+
+<div class="slide">🤝 Promise Day – I promise I will never get bored of you, never give up on you, and never stop loving you.I promise to stand with you always. I promise I will never get bored of you, never give up on you, and never stop loving you. 🤞💞 I will support you no matter what and stay with you through every struggle. You are my first and last love.</div>
+
+<div class="slide">🤗 Hug Day – Your hug feels like home. In your arms, my heart feels complete.</div>
+
+<div class="slide">💋 Kiss Day – A kiss from you feels like magic. It’s love, trust, and all the unspoken feelings between us.</div>
+
+<div class="slide">
+    <h2>❤️ Our Special Moment</h2>
+   <img src="C:\Users\ravin\Downloads\c6.jpeg" width="250" style="border-radius:20px;">
+    <p>Happy Valentine’s Day 💕  
+    Every moment with you is my favorite memory.  
+    I feel complete with you.</p>
+</div>
+
+<div class="slide">
+    <div class="glow">❤️ I LOVE YOU FOREVER ❤️</div>
+    <p>You are my today and my forever. Happy Valentine’s Day Bava 💕✨</p>
+</div>
+
+<script>
+let index=0;
+let slides=document.querySelectorAll(".slide");
+
+function showSlides(){
+    slides[index].classList.remove("active");
+    index=(index+1)%slides.length;
+    slides[index].classList.add("active");
+}
+setInterval(showSlides,4000);
+
+/* floating hearts */
+setInterval(function(){
+    let heart=document.createElement("div");
+    heart.innerHTML="❤️";
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"%";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},500);
+
+/* play music on first click */
+document.addEventListener("click", function(){
+    document.getElementById("bgMusic").play();
+}, { once:true });
+</script>
+
+</body>
+</html>
